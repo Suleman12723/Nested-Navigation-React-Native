@@ -2,8 +2,8 @@
 ## This is an example of nested navigation in react native.
 
 ###### Used Navigations are:
--Stack Navigation
--BottomTabNavigation
+- Stack Navigation
+- BottomTabNavigation
 
 ###### Pages included:
 - A dashboard (showing personal information).
