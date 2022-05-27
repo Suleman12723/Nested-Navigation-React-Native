@@ -7,8 +7,8 @@
 
 **Pages included:
 -A dashboard (showing personal information).
-![Design preview for the Dashboard Page](./DashboardPage.jpg)
+![Design preview for the Dashboard Page](./DashboardPage.jpeg)
 -A Home (showing list of all people in the database(here an object).
-![Design preview for the Home Page](./HomePage.jpg)
+![Design preview for the Home Page](./HomePage.jpeg)
 -A Profile (showing the data of person whom you clicked on from Home.
-![Design preview for the Profile Page](./ProfilePage.jpg)
+![Design preview for the Profile Page](./ProfilePage.jpeg)
