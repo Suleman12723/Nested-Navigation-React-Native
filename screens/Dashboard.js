@@ -7,7 +7,7 @@ function Dashboard({navigation,route}) {
       
       
     <View style={styles.container}>
-       <Image style={styles.image} source={require('..//assets/profile.jpg')} resizeMode='stretch'/>
+       <Image style={styles.image} source={require('..//assets/dashboardIMG.jpg')} resizeMode='stretch'/>
         
         <View style={styles.infoContainer}>
             <Text style={styles.Nametext}>Suleman Sohail</Text>
