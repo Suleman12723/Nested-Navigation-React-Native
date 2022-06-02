@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,6 +10,7 @@ import Dashboard from './screens/Dashboard';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import React, {createContext} from "react";
 import {ContextProvider} from './contextAPI/context';
+import NewUser from './screens/NewUser';
 
 
 
@@ -21,7 +22,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-const BottomTabNavigator = ()=>{
+const BottomTabNavigator = ({navigation})=>{
   
 
   return (
@@ -46,7 +47,12 @@ const BottomTabNavigator = ()=>{
       showLabel:false
     }}>
       <Tab.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}} />
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={Home} options={{
+        
+          headerRight: () => (
+            <Pressable style={{marginRight:10}} onPress={() => navigation.navigate('NewUser')}><FontAwesome5 name="user-plus" size={24} color="green" /></Pressable>
+  )}} 
+      />
     </Tab.Navigator>
 
   );
@@ -54,8 +60,9 @@ const BottomTabNavigator = ()=>{
 const StackNavigator = ()=>{
   return (
     <Stack.Navigator>
-        <Stack.Screen name='Previous' component={BottomTabNavigator} options={{headerShown:false}}/>      
+        <Stack.Screen name='Previous' component={BottomTabNavigator} options={{headerShown:false}} />      
         <Stack.Screen name='Profile' component={Profile} />      
+        <Stack.Screen name='NewUser' component={NewUser} />      
     </Stack.Navigator>
 
   );

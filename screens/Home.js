@@ -7,13 +7,13 @@ import  {Context} from "../contextAPI/context";
 
 function Home({navigation,route}) {
   
-    const ContextDATA = useContext(Context);
+    const contextData = useContext(Context);
     const HandleNavigation = (param)=>{
       navigation.navigate('Profile',param);
     }
 
     const HandleDelete = (id)=>{
-      ContextDATA.deleteUser(id);
+      contextData.deleteUser(id);
     }
    
   return (
