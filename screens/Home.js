@@ -1,21 +1,25 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {StyleSheet,View, Text, Button,Pressable, FlatList} from "react-native";
 import ListComponent from '../components/ListComponent';
-
-
+import  {Context} from "../contextAPI/context";
   
 
 
 function Home({navigation,route}) {
-  const data = route.params.data;
-
+  
+    const ContextDATA = useContext(Context);
     const HandleNavigation = (param)=>{
       navigation.navigate('Profile',param);
     }
+
+    const HandleDelete = (id)=>{
+      ContextDATA.deleteUser(id);
+    }
    
   return (
+  
     <View style={styles.container}>
-        <ListComponent data={data} Navigator={HandleNavigation} />
+        <ListComponent  Navigator={HandleNavigation}  />
     </View>
   )
 }
