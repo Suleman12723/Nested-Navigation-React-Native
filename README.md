@@ -4,6 +4,8 @@
 ###### Used Navigations are:
 - Stack Navigation
 - BottomTabNavigation
+###### For App wide state
+- ContextAPI
 
 ###### Pages included:
 - A dashboard (showing personal information).
