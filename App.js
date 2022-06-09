@@ -11,10 +11,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import React, {createContext} from "react";
 import {ContextProvider} from './contextAPI/context';
 import NewUser from './screens/NewUser';
-
-
-
-
+import axios from 'axios';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -68,8 +65,19 @@ const StackNavigator = ()=>{
   );
 }
 
+async function  getData(){
+  await axios.get('https://asd212231dds-default-rtdb.asia-southeast1.firebasedatabase.app/data.json').then((resp)=>{
+    for(const key in resp.data){
+    //  console.log( key);
+     console.log( resp.data[key].name);
+    }
+  })
+}
+
+
 export default function App() {
-  
+  // axios.post('https://asd212231dds-default-rtdb.asia-southeast1.firebasedatabase.app/data.json',{name:'test',age:30})
+  getData();
   return (
     <ContextProvider>      
       <NavigationContainer>
